@@ -1,0 +1,612 @@
+/* --- Token-uri de Design Premium, Curat și Luminos --- */
+:root {
+    --bg-pure: #FFFFFF;
+    --bg-light: #F4F8FA; /* Tentă extrem de fină de bleu-rece, curat */
+    --text-dark: #0F172A;
+    --text-muted: #475569;
+    --primary-blue: #0284C7; /* Albastru profesional revigorant */
+    --primary-blue-hover: #0369A1;
+    --border-color: #E2E8F0;
+    --font-global: 'Inter', sans-serif;
+    --transition-base: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-pure);
+    color: var(--text-dark);
+    font-family: var(--font-global);
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 80px 24px;
+}
+
+.section-gray {
+    background-color: var(--bg-light);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* --- Mecanism Traducere --- */
+body.lang-ro .lang-en { display: none !important; }
+body.lang-en .lang-ro { display: none !important; }
+
+/* --- Ecran de Încărcare (Preloader) --- */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-pure);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease;
+}
+
+.preloader-wrap {
+    text-align: center;
+    width: 200px;
+}
+
+.preloader-line {
+    width: 0%;
+    height: 3px;
+    background: var(--primary-blue);
+    margin-bottom: 12px;
+    animation: load-line 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.preloader-text {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    color: var(--text-muted);
+}
+
+@keyframes load-line {
+    to { width: 100%; }
+}
+
+/* --- Navigație Fixă Simplă --- */
+#main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    transition: var(--transition-base);
+    padding: 14px 0;
+}
+
+#main-nav.scrolled {
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+    padding: 16px 0;
+}
+
+.nav-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    text-decoration: none;
+    color: var(--text-dark);
+}
+
+.logo span {
+    color: var(--primary-blue);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 500;
+    transition: var(--transition-base);
+}
+
+.nav-item:hover {
+    color: var(--primary-blue);
+}
+
+.btn-nav {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--primary-blue);
+    border: 1px solid var(--primary-blue);
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: var(--transition-base);
+}
+
+.btn-nav:hover {
+    background: var(--primary-blue);
+    color: var(--bg-pure);
+}
+
+.lang-switcher {
+    display: flex;
+    gap: 8px;
+    border-left: 1px solid var(--border-color);
+    padding-left: 16px;
+}
+
+.lang-switcher button {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition-base);
+}
+
+.lang-switcher button.active, .lang-switcher button:hover {
+    color: var(--primary-blue);
+}
+
+/* --- Zona Hero --- */
+#hero {
+    padding-top: 160px;
+    background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    padding-bottom: 60px;
+}
+
+.badge {
+    display: inline-block;
+    background: #F0F9FF;
+    border: 1px solid #BAE6FD;
+    color: var(--primary-blue);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 50px;
+    margin-bottom: 24px;
+}
+
+#hero h1 {
+    font-size: clamp(32px, 4.5vw, 46px);
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--text-dark);
+    margin-bottom: 24px;
+}
+
+#hero p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 16px;
+}
+
+.btn-primary, .btn-secondary, .btn-submit-local {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 16px 32px;
+    border-radius: 6px;
+    transition: var(--transition-base);
+}
+
+.btn-primary {
+    background: var(--primary-blue);
+    color: var(--bg-pure);
+    box-shadow: 0 4px 14px rgba(2, 132, 199, 0.2);
+}
+
+.btn-primary:hover {
+    background: var(--primary-blue-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(2, 132, 199, 0.25);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-dark);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background: var(--bg-light);
+}
+
+/* --- Ramă Foto Placeholder Impecabilă --- */
+.photo-frame, .photo-frame-sub {
+    background: var(--bg-pure);
+    border: 1px solid var(--border-color);
+    padding: 14px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.03);
+}
+
+.placeholder-bg {
+    background: #F1F5F9;
+    width: 100%;
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px dashed #CBD5E1;
+}
+
+.placeholder-bg span {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+/* --- Secțiune Argumente & Importanță --- */
+.centered-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 60px auto;
+}
+
+.centered-header h2 {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 16px;
+}
+
+.centered-header p {
+    color: var(--text-muted);
+    font-size: 16px;
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+}
+
+.trust-card {
+    background: var(--bg-pure);
+    border: 1px solid var(--border-color);
+    padding: 40px;
+    border-radius: 8px;
+    transition: var(--transition-base);
+}
+
+.trust-card:hover {
+    border-color: var(--primary-blue);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.03);
+}
+
+.card-num {
+    font-size: 32px;
+    font-weight: 800;
+    color: #E0F2FE;
+    margin-bottom: 16px;
+}
+
+.trust-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.trust-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+/* --- Structură pe Două Coloane (Servicii) --- */
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.section-title-small {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--primary-blue);
+    display: block;
+    margin-bottom: 12px;
+}
+
+.steps-list {
+    list-style: none;
+    margin-top: 24px;
+}
+
+.steps-list li {
+    margin-bottom: 28px;
+    padding-left: 20px;
+    border-left: 3px solid var(--border-color);
+    transition: var(--transition-base);
+}
+
+.steps-list li:hover {
+    border-left-color: var(--primary-blue);
+}
+
+.steps-list strong {
+    display: block;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.steps-list p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* --- Banner Finanțare --- */
+.pricing-banner {
+    background: var(--bg-pure);
+    border: 1px solid var(--border-color);
+    padding: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.banner-text {
+    max-width: 650px;
+}
+
+.pricing-banner h2 {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.pricing-banner p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+/* --- Configurare Contact & Formular local --- */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.phone-box {
+    margin-top: 36px;
+    padding: 32px;
+    background: var(--bg-light);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.phone-box .label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.phone-link {
+    font-size: clamp(26px, 3vw, 34px);
+    font-weight: 800;
+    color: var(--primary-blue);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.form-container {
+    background: var(--bg-light);
+    border: 1px solid var(--border-color);
+    padding: 40px;
+    border-radius: 12px;
+}
+
+.form-row {
+    margin-bottom: 20px;
+}
+
+.form-row label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.form-row input, .form-row select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-pure);
+    border-radius: 6px;
+    font-family: var(--font-global);
+    font-size: 14px;
+    transition: var(--transition-base);
+}
+
+.form-row input:focus, .form-row select:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.08);
+}
+
+.btn-submit-local {
+    width: 100%;
+    background: var(--primary-blue);
+    color: var(--bg-pure);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-submit-local:hover {
+    background: var(--primary-blue-hover);
+}
+
+/* --- Footer --- */
+footer {
+    border-top: 1px solid var(--border-color);
+    padding: 40px 0;
+    background: var(--bg-light);
+}
+
+.footer-wrap {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: var(--text-muted);
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* --- Buton WhatsApp Persistent Fixat --- */
+#whatsapp-widget {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    z-index: 998;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #25D366;
+    color: var(--bg-pure);
+    padding: 14px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+    transition: var(--transition-base);
+    opacity: 0;
+    transform: translateY(15px);
+}
+
+#whatsapp-widget.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#whatsapp-widget:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(37, 211, 102, 0.4);
+}
+
+.wa-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.wa-text {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* --- Efect de Relevanță Simplu la Scroll --- */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Layout Responsiv --- */
+@media (max-width: 992px) {
+    .hero-grid, .two-column, .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+    .pricing-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 32px;
+    }
+    .nav-links {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 60px 20px;
+    }
+    #hero {
+        padding-top: 130px;
+    }
+    .hero-actions {
+        flex-direction: column;
+    }
+    .footer-wrap {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+    .wa-text {
+        display: none; /* Rămâne doar cercul cu iconița pe ecrane mici */
+    }
+    #whatsapp-widget {
+        padding: 14px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
