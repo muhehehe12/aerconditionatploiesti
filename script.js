@@ -88,4 +88,34 @@ document.addEventListener('DOMContentLoaded', () => {
             mainAudio.volume = mainVideo.volume;
         });
     }
+
+    // 6. Hamburger Menu (Mobile)
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+    function openMenu() {
+        mobileMenuOverlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+        mobileMenuOverlay.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    if (hamburgerBtn) hamburgerBtn.addEventListener('click', openMenu);
+    if (mobileMenuClose) mobileMenuClose.addEventListener('click', closeMenu);
+
+    // Inchide menu la click pe fundal
+    if (mobileMenuOverlay) {
+        mobileMenuOverlay.addEventListener('click', (e) => {
+            if (e.target === mobileMenuOverlay) closeMenu();
+        });
+    }
+
+    // Inchide menu la click pe un link
+    document.querySelectorAll('.mobile-nav-item, .mobile-nav-cta').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
 });
