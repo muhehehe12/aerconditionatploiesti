@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 preloader.style.opacity = '0';
                 setTimeout(() => {
                     preloader.style.display = 'none';
-                    
+
                     // Activare buton WhatsApp persistent după încărcare completă
                     if (whatsappWidget) {
                         whatsappWidget.classList.add('is-visible');
@@ -63,6 +63,29 @@ document.addEventListener('DOMContentLoaded', () => {
             body.className = 'lang-ro';
             btnEn.classList.remove('active');
             btnRo.classList.add('active');
+        });
+    }
+
+    // 5. Sincronizare Video si Audio
+    const mainVideo = document.getElementById('main-video');
+    const mainAudio = document.getElementById('main-audio');
+
+    if (mainVideo && mainAudio) {
+        // Sincronizare Play / Pause
+        mainVideo.addEventListener('play', () => mainAudio.play());
+        mainVideo.addEventListener('pause', () => mainAudio.pause());
+        mainVideo.addEventListener('waiting', () => mainAudio.pause());
+        mainVideo.addEventListener('playing', () => mainAudio.play());
+
+        // Sincronizare Timp
+        mainVideo.addEventListener('seeked', () => {
+            mainAudio.currentTime = mainVideo.currentTime;
+        });
+
+        // Sincronizare Volum si Mute
+        mainVideo.addEventListener('volumechange', () => {
+            mainAudio.muted = mainVideo.muted;
+            mainAudio.volume = mainVideo.volume;
         });
     }
 });
