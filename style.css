@@ -217,13 +217,18 @@ body.lang-en .lang-ro {
 }
 
 .hero-text {
-    background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     padding: 48px;
     border-radius: 24px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+#hero h1 {
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
 
 .badge {
@@ -607,7 +612,6 @@ footer {
     transform: translateY(0);
 }
 
-/* --- Layout Responsiv --- */
 @media (max-width: 992px) {
 
     .hero-grid,
@@ -630,6 +634,145 @@ footer {
     .nav-center-title {
         display: none;
     }
+
+    .btn-nav {
+        display: none;
+    }
+}
+
+/* --- Hamburger Button --- */
+.hamburger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 8px;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    padding: 8px;
+    transition: background 0.2s;
+}
+
+.hamburger-btn span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--primary-blue);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger-btn:hover {
+    background: rgba(2, 132, 199, 0.15);
+}
+
+@media (max-width: 992px) {
+    .hamburger-btn {
+        display: flex;
+    }
+}
+
+/* --- Mobile Menu Overlay --- */
+.mobile-menu-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    backdrop-filter: blur(4px);
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.mobile-menu-overlay.open {
+    display: flex;
+}
+
+.mobile-menu {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-left: 1px solid rgba(255,255,255,0.3);
+    width: 280px;
+    height: 100vh;
+    padding: 48px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: -8px 0 32px rgba(0,0,0,0.2);
+    position: relative;
+    animation: slideInRight 0.3s ease;
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(100%); }
+    to   { transform: translateX(0); }
+}
+
+.mobile-menu-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    line-height: 1;
+    font-weight: 300;
+}
+
+.mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.mobile-nav-item {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 14px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: background 0.2s, transform 0.2s;
+}
+
+.mobile-nav-item:hover {
+    background: rgba(255,255,255,0.25);
+    transform: scale(1.02);
+}
+
+.mobile-nav-cta {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 16px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    background: var(--primary-blue);
+    margin-top: 16px;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.mobile-nav-cta:hover {
+    background: var(--primary-blue-hover);
+    transform: scale(1.02);
 }
 
 @media (max-width: 768px) {
