@@ -72,8 +72,15 @@
             </div>
 
             <div class="hero-image-holder scroll-reveal">
-                <div class="photo-frame">
-                    <img src="img1.jpeg" alt="Tehnician echipat profesional curățând aer condiționat" style="width: 100%; border-radius: 8px; object-fit: cover; aspect-ratio: 4/3; display: block;">
+                <div class="video-wrapper" style="width: 100%; margin: 0; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                    <video id="main-video" controls playsinline style="width: 100%; border-radius: 16px; display: block;">
+                        <source src="video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <!-- Audio atasat la video -->
+                    <audio id="main-audio" loop>
+                        <source src="audio.mp3" type="audio/mpeg">
+                    </audio>
                 </div>
             </div>
         </div>
@@ -190,28 +197,6 @@
             <div class="gallery-item scroll-reveal"><img src="img7.jpeg" alt="Lucrare Clima Expert" loading="lazy"></div>
             <div class="gallery-item scroll-reveal"><img src="img8.jpeg" alt="Lucrare Clima Expert" loading="lazy"></div>
             <div class="gallery-item scroll-reveal"><img src="img9.jpeg" alt="Lucrare Clima Expert" loading="lazy"></div>
-        </div>
-    </section>
-
-    <!-- Sectiune Video cu Audio Sincronizat -->
-    <section id="video-prezentare" class="section-gray">
-        <div class="container">
-            <div class="centered-header scroll-reveal">
-                <h2 class="lang-en">Experience the Difference</h2>
-                <h2 class="lang-ro">Experiența Calității</h2>
-                <p class="lang-en">Watch our detailed workflow. Please turn on audio for the full experience.</p>
-                <p class="lang-ro">Urmărește procesul nostru de lucru. Recomandăm activarea sunetului.</p>
-            </div>
-            <div class="video-wrapper scroll-reveal">
-                <video id="main-video" controls playsinline>
-                    <source src="video.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <!-- Audio atasat la video -->
-                <audio id="main-audio" loop>
-                    <source src="audio.mp3" type="audio/mpeg">
-                </audio>
-            </div>
         </div>
     </section>
 
