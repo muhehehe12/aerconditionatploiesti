@@ -10,12 +10,12 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body class="lang-ro">
 
-    <!-- Preloader Tehnic/Luminos -->
     <div id="preloader">
         <div class="preloader-wrap">
             <div class="preloader-line"></div>
@@ -23,7 +23,6 @@
         </div>
     </div>
 
-    <!-- Bară de Navigare -->
     <header id="main-nav">
         <div class="nav-container">
             <div class="nav-left">
@@ -58,7 +57,6 @@
         </div>
     </header>
 
-    <!-- Mobile Menu Overlay -->
     <div class="mobile-menu-overlay" id="mobile-menu-overlay">
         <div class="mobile-menu">
             <button class="mobile-menu-close" id="mobile-menu-close">&times;</button>
@@ -81,17 +79,30 @@
         </div>
     </div>
 
-    <!-- Hero Section - Full background, transparent glass text box -->
     <section id="hero">
         <div class="hero-content">
             <div class="hero-text scroll-reveal">
                 <span class="hero-tagline lang-ro">Servicii Profesionale &middot; Ploiești</span>
                 <span class="hero-tagline lang-en">Professional Services &middot; Ploiești</span>
-                <h1 class="lang-ro" style="color:#fff !important;">Creăm confortul<br>pentru tine,<br><em>fie vară, fie
-                        iarnă.</em></h1>
-                <h1 class="lang-en" style="color:#fff !important;">We create comfort<br>for you,<br><em>summer or
-                        winter.</em></h1>
-                <div class="hero-actions">
+
+                <h1 class="lang-ro" style="color:#fff !important; font-size: clamp(26px, 4vw, 42px); line-height: 1.2;">
+                    IGIENIZARE / CURĂȚARE <br>aere condiționate 9000 - 12000 BTU.
+                    <span
+                        style="display: block; font-size: 0.55em; font-weight: 500; margin-top: 20px; color: rgba(255,255,255,0.9); line-height: 1.5; letter-spacing: 0;">
+                        Intervenim urgent și după ora 17 în timpul săptămânii și în weekend. Începând cu al doilea aer
+                        condiționat curățat în aceeași locație oferim reducere!
+                    </span>
+                </h1>
+                <h1 class="lang-en" style="color:#fff !important; font-size: clamp(26px, 4vw, 42px); line-height: 1.2;">
+                    AC SANITIZATION / CLEANING <br>9000 - 12000 BTU.
+                    <span
+                        style="display: block; font-size: 0.55em; font-weight: 500; margin-top: 20px; color: rgba(255,255,255,0.9); line-height: 1.5; letter-spacing: 0;">
+                        Urgent interventions after 5 PM on weekdays and weekends. Discount applied starting with the
+                        second AC unit cleaned at the same location!
+                    </span>
+                </h1>
+
+                <div class="hero-actions" style="margin-top: 36px;">
                     <a href="#avantaje" class="btn-hero-primary"><span class="lang-en">Why is it necessary
                             &rsaquo;</span><span class="lang-ro">De ce e necesar &rsaquo;</span></a>
                     <a href="tel:0730946550" class="btn-hero-secondary"><span class="lang-en">Call Now</span><span
@@ -101,22 +112,39 @@
         </div>
     </section>
 
-    <!-- Sectiune Video (sub hero) -->
+    <section style="background: var(--text-dark); color: white; padding: 70px 0; text-align: center;">
+        <div class="container" style="padding: 0 24px;">
+            <h2 class="lang-ro scroll-reveal"
+                style="font-size: clamp(32px, 5vw, 48px); font-weight: 900; margin: 0; letter-spacing: -1.5px; line-height: 1.2;">
+                Creăm confortul<br>pentru tine,<br>
+                <em style="font-style: normal; color: #7dd3fc;">fie vară, fie iarnă.</em>
+            </h2>
+            <h2 class="lang-en scroll-reveal"
+                style="font-size: clamp(32px, 5vw, 48px); font-weight: 900; margin: 0; letter-spacing: -1.5px; line-height: 1.2;">
+                We create comfort<br>for you,<br>
+                <em style="font-style: normal; color: #7dd3fc;">summer or winter.</em>
+            </h2>
+        </div>
+    </section>
+
     <section id="video-section" class="section-video-row">
         <div class="container">
             <div class="video-row-grid">
                 <div class="video-row-text scroll-reveal">
                     <span class="section-title-small">VEZI CUM LUCRAM</span>
-                    <h2 class="lang-ro">Profesionalism la fiecare intervenție,la preturi corecte</h2>
+                    <h2 class="lang-ro">Profesionalism la fiecare intervenție</h2>
                     <h2 class="lang-en">Professionalism at every step</h2>
                     <p class="lang-ro">Echipa noastră folosește echipamente certificate și soluții profesionale pentru
                         fiecare igienizare, montaj și revizie. Calitate garantată, program flexibil.</p>
                     <p class="lang-en">Our team uses certified equipment and professional solutions for every
                         sanitization, installation and service. Guaranteed quality, flexible schedule.</p>
-                    <p class="pfa-badge"><span class="lang-ro">Emitem facturi fiscale ca PFA autorizat &mdash;
-                            activitate în conformitate cu legislația fiscală în vigoare.</span><span class="lang-en">We
-                            issue fiscal invoices as an authorized PFA &mdash; fully compliant with Romanian tax
-                            law.</span></p>
+                    <p class="pfa-badge"
+                        style="margin-top: 20px; font-size: 14px; font-weight: 600; color: var(--primary-blue); background: var(--bg-light); padding: 12px; border-radius: 6px; border: 1px solid var(--border-color);">
+                        <span class="lang-ro">Emitem facturi fiscale ca PFA autorizat &mdash; activitate în conformitate
+                            cu legislația fiscală în vigoare.</span>
+                        <span class="lang-en">We issue fiscal invoices as an authorized PFA &mdash; fully compliant with
+                            Romanian tax law.</span>
+                    </p>
                 </div>
                 <div class="video-row-media scroll-reveal">
                     <div class="video-wrapper">
@@ -132,7 +160,6 @@
         </div>
     </section>
 
-    <!-- Pilonii de Sănătate și Eficiență Energetică -->
     <section id="avantaje" class="section-gray">
         <div class="container">
             <div class="centered-header scroll-reveal">
@@ -182,7 +209,6 @@
         </div>
     </section>
 
-    <!-- Servicii și Specializări Tehnice -->
     <section id="servicii" class="container">
         <div class="two-column">
             <div class="column-left scroll-reveal">
@@ -226,7 +252,6 @@
         </div>
     </section>
 
-    <!-- Galerie Foto Aesthetic -->
     <section id="galerie" class="container">
         <div class="centered-header scroll-reveal">
             <h2 class="lang-en">Our Recent Work</h2>
@@ -256,7 +281,6 @@
         </div>
     </section>
 
-    <!-- Contact Local Rapid -->
     <section id="contact" class="container">
         <div class="contact-grid">
             <div class="contact-details scroll-reveal">
@@ -303,15 +327,13 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container footer-wrap">
-            <p>&copy; 2026 TERMOCLIMA SANIT. Sănătatea aerului tău.</p>
+            <p>&copy; 2026 TERMOCLIMA SANIT PLOIESTI. Sănătatea aerului tău.</p>
             <p class="text-muted">Servicii Tehnice Autorizate | Ploiești - Prahova</p>
         </div>
     </footer>
 
-    <!-- WhatsApp Sticky Widget -->
     <a href="https://wa.me/40730946550" target="_blank" rel="noopener noreferrer" id="whatsapp-widget"
         aria-label="Contact WhatsApp">
         <svg class="wa-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
