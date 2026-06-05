@@ -94,7 +94,7 @@ body.lang-en .lang-ro {
     }
 }
 
-/* --- Navigație Fixă Simplă --- */
+/* --- Navigație Fixă Simplă (Bara de sus actualizată) --- */
 #main-nav {
     position: fixed;
     top: 0;
@@ -104,12 +104,31 @@ body.lang-en .lang-ro {
     background: #ffffff;
     border-bottom: 1px solid #e8ecef;
     transition: var(--transition-base);
-    padding: 10px 0;
+    padding: 6px 0;
+    /* Spațiu mai mic pentru o bară subțire */
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
 }
 
+#main-nav.scrolled {
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+    padding: 8px 0;
+}
+
+.nav-container {
+    max-width: 1440px;
+    /* Lărgit pentru a împinge elementele spre exterior */
+    position: relative;
+    /* Necesar pentru centrarea titlului absolut */
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .premium-title {
-    font-size: 24px;
+    font-size: 20px;
+    /* Mărime adaptată la noua grosime a barei */
     font-weight: 900;
     text-transform: uppercase;
     background: linear-gradient(135deg, var(--primary-blue) 0%, #034A72 100%);
@@ -120,27 +139,17 @@ body.lang-en .lang-ro {
 }
 
 .nav-center-title {
-    /* Centrare absolută a titlului în mijlocul containerului */
+    /* Centrare perfectă absolută */
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
 }
 
-#main-nav.scrolled {
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
-    padding: 16px 0;
-}
-
-.nav-container {
-    max-width: 1440px;
-    /* Lărgit pentru a împinge logoul și meniul spre margini */
-    position: relative;
-    /* Necesar pentru centrarea absolută a titlului */
-    margin: 0 auto;
-    padding: 0 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.nav-logo-img {
+    height: 50px;
+    /* Logo micșorat pentru a încăpea în bara mai subțire */
+    object-fit: contain;
+    border-radius: 6px;
 }
 
 .logo {
@@ -221,13 +230,6 @@ body.lang-en .lang-ro {
     display: flex;
     align-items: center;
     gap: 12px;
-}
-
-.nav-logo-img {
-    height: 80px;
-    /* Logo mai mare */
-    object-fit: contain;
-    border-radius: 6px;
 }
 
 /* --- Zona Hero --- */
@@ -353,7 +355,7 @@ body.lang-en .lang-ro {
     margin: 0;
 }
 
-/* Mobile menu refinements */
+/* --- Mobile menu refinements --- */
 .mobile-menu-logo {
     height: 65px;
     object-fit: contain;
@@ -380,21 +382,6 @@ body.lang-en .lang-ro {
     justify-content: center;
 }
 
-@media (max-width: 768px) {
-    .video-row-grid {
-        grid-template-columns: 1fr;
-        gap: 36px;
-    }
-
-    #hero h1 {
-        font-size: clamp(32px, 8vw, 48px);
-    }
-
-    .hero-text {
-        max-width: 100%;
-    }
-}
-
 .badge {
     display: inline-block;
     background: #F0F9FF;
@@ -405,22 +392,6 @@ body.lang-en .lang-ro {
     padding: 6px 14px;
     border-radius: 50px;
     margin-bottom: 24px;
-}
-
-#hero h1 {
-    font-size: clamp(32px, 4vw, 42px);
-    line-height: 1.25;
-    font-weight: 800;
-    letter-spacing: -1px;
-    color: var(--text-dark);
-    margin-bottom: 24px;
-}
-
-#hero p {
-    font-size: 16px;
-    line-height: 1.7;
-    color: var(--text-muted);
-    margin-bottom: 40px;
 }
 
 .hero-actions {
@@ -776,7 +747,13 @@ footer {
     transform: translateY(0);
 }
 
+/* --- REGLAJE PENTRU TABLETĂ ȘI MOBIL (Ecrane sub 992px) --- */
 @media (max-width: 992px) {
+
+    /* Ascunde schimbătorul de limbă de pe bara principală (doar pe mobil) */
+    .nav-right .lang-switcher {
+        display: none !important;
+    }
 
     .hero-grid,
     .two-column,
@@ -791,12 +768,13 @@ footer {
         padding: 32px;
     }
 
+    /* Ascunde linkurile din meniul normal pe mobil */
     .nav-links {
         display: none;
     }
 
+    /* Asigură-te că titlul se vede pe mobil și e proporționat corect */
     .nav-center-title {
-        /* Afișare titlu pe telefon (Mobil) */
         display: block;
         font-size: 15px;
         white-space: nowrap;
@@ -947,7 +925,21 @@ footer {
     transform: scale(1.02);
 }
 
+/* --- REGLAJE PENTRU TELEFON (Ecrane sub 768px) --- */
 @media (max-width: 768px) {
+    .video-row-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    #hero h1 {
+        font-size: clamp(32px, 8vw, 48px);
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
     .container {
         padding: 60px 20px;
     }
