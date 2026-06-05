@@ -19,73 +19,100 @@
     <div id="preloader">
         <div class="preloader-wrap">
             <div class="preloader-line"></div>
-            <span class="preloader-text lang-en">CLEAN AIR SYSTEMS</span>
-            <span class="preloader-text lang-ro">SISTEME AER CURAT</span>
+            <span class="preloader-text">CLIMATERM PLOIESTI</span>
         </div>
     </div>
 
     <!-- Bară de Navigare -->
     <header id="main-nav">
         <div class="nav-container">
-            <div class="nav-left" style="display: flex; align-items: center; gap: 32px;">
+            <div class="nav-left">
                 <a href="#" class="logo">
-                    <img src="Untitle1d.jpg" alt="Sigla Climaterm" style="height: 70px; border-radius: 8px; object-fit: contain;">
+                    <img src="v.png" alt="Sigla Climaterm" class="nav-logo-img">
                 </a>
                 <nav class="nav-links">
                     <a href="#avantaje" class="nav-item"><span class="lang-en">Why Us</span><span class="lang-ro">De ce noi</span></a>
-                    <a href="#servicii" class="nav-item"><span class="lang-en">Specializations</span><span class="lang-ro">Specializări</span></a>
+                    <a href="#servicii" class="nav-item"><span class="lang-en">Services</span><span class="lang-ro">Servicii</span></a>
+                    <a href="#galerie" class="nav-item"><span class="lang-en">Gallery</span><span class="lang-ro">Galerie</span></a>
+                    <a href="#contact" class="nav-item"><span class="lang-en">Contact</span><span class="lang-ro">Contact</span></a>
                 </nav>
             </div>
-            
-            <div class="nav-center-title premium-title">
-                CLIMATERM PLOIESTI
-            </div>
 
-            <div class="nav-right" style="display: flex; align-items: center; gap: 16px;">
-                <a href="#contact" class="btn-nav"><span class="lang-en">Book Evening/Sunday</span><span class="lang-ro">Programare Seara</span></a>
+            <div class="nav-center-title premium-title">CLIMATERM PLOIESTI</div>
+
+            <div class="nav-right">
+                <a href="#contact" class="btn-nav"><span class="lang-en">Book Now</span><span class="lang-ro">Programare</span></a>
                 <div class="lang-switcher">
                     <button id="btn-ro" class="active">RO</button>
                     <button id="btn-en">EN</button>
                 </div>
+                <button class="hamburger-btn" id="hamburger-btn" aria-label="Meniu">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section (Accent pe programul flexibil și sănătate) -->
-    <section id="hero" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url('Untitle2d.jpg') center/cover no-repeat; padding-top: 160px;">
-        <div class="hero-grid container">
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay">
+        <div class="mobile-menu">
+            <button class="mobile-menu-close" id="mobile-menu-close">&times;</button>
+            <img src="v.png" alt="Logo" class="mobile-menu-logo">
+            <div class="premium-title mobile-menu-brand">CLIMATERM PLOIESTI</div>
+            <nav class="mobile-nav-links">
+                <a href="#avantaje" class="mobile-nav-item"><span class="lang-en">Why Us</span><span class="lang-ro">De ce noi</span></a>
+                <a href="#servicii" class="mobile-nav-item"><span class="lang-en">Services</span><span class="lang-ro">Servicii</span></a>
+                <a href="#galerie" class="mobile-nav-item"><span class="lang-en">Gallery</span><span class="lang-ro">Galerie</span></a>
+                <a href="#contact" class="mobile-nav-item"><span class="lang-en">Contact</span><span class="lang-ro">Contact</span></a>
+                <a href="#contact" class="mobile-nav-cta">📅 <span class="lang-en">Book Now</span><span class="lang-ro">Programare Seara</span></a>
+            </nav>
+            <div class="lang-switcher mobile-lang">
+                <button id="btn-ro-m" class="active" onclick="document.getElementById('btn-ro').click()">RO</button>
+                <button id="btn-en-m" onclick="document.getElementById('btn-en').click()">EN</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section - Full background, transparent glass text box -->
+    <section id="hero">
+        <div class="hero-content">
             <div class="hero-text scroll-reveal">
-                <span class="badge lang-en">Special Schedule for Busy People (After 17:30 & Sundays)</span>
-                <span class="badge lang-ro">Program Special: Seara (după 17:30) & Duminica</span>
-
-                <h1 class="lang-en">We create comfort for you, whether it's summer or winter.</h1>
-                <h1 class="lang-ro">Creăm confortul pentru tine, fie vară, fie iarnă.</h1>
-
-                <p class="lang-en">Don't take a day off from work! We sanitize and install AC units or heat pumps in
-                    Ploiești when you are actually free. Get rid of mold, bacteria, and high energy bills cleanly and
-                    quickly.</p>
-                <p class="lang-ro">Nu trebuie să îți iei liber de la muncă! Igienizăm, curățăm și montăm aparate de aer
-                    condiționat sau pompe de căldură în Ploiești atunci când ești acasă. Elimină mucegaiul, bacteriile
-                    și consumul uriaș de curent.</p>
-
+                <span class="hero-tagline lang-ro">Servicii Profesionale · Ploiești</span>
+                <span class="hero-tagline lang-en">Professional Services · Ploiești</span>
+                <h1 class="lang-ro">Creăm confortul<br>pentru tine,<br><em>fie vară, fie iarnă.</em></h1>
+                <h1 class="lang-en">We create comfort<br>for you,<br><em>summer or winter.</em></h1>
                 <div class="hero-actions">
-                    <a href="tel:0730946550" class="btn-primary"><span class="lang-en">Call Now: 073 094
-                            6550</span><span class="lang-ro">Sună Acum: 073 094 6550</span></a>
-                    <a href="#avantaje" class="btn-secondary"><span class="lang-en">See Benefits</span><span
-                            class="lang-ro">De ce este obligatoriu?</span></a>
+                    <a href="tel:0730946550" class="btn-hero-primary"><span class="lang-en">📞 Call Now</span><span class="lang-ro">📞 Sună Acum</span></a>
+                    <a href="https://wa.me/40730946550" target="_blank" class="btn-hero-secondary"><span class="lang-en">💬 WhatsApp</span><span class="lang-ro">💬 WhatsApp</span></a>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="hero-image-holder scroll-reveal">
-                <div class="video-wrapper" style="width: 100%; margin: 0; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
-                    <video id="main-video" controls playsinline style="width: 100%; border-radius: 16px; display: block;">
-                        <source src="video.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <!-- Audio atasat la video -->
-                    <audio id="main-audio" loop>
-                        <source src="audio.mp3" type="audio/mpeg">
-                    </audio>
+    <!-- Sectiune Video (sub hero) -->
+    <section id="video-section" class="section-video-row">
+        <div class="container">
+            <div class="video-row-grid">
+                <div class="video-row-text scroll-reveal">
+                    <span class="section-title-small">VEZI CUM LUCRAM</span>
+                    <h2 class="lang-ro">Profesionalism la fiecare intervenție</h2>
+                    <h2 class="lang-en">Professionalism at every step</h2>
+                    <p class="lang-ro">Echipa noastră folosește echipamente certificate și soluții profesionale pentru fiecare igienizare, montaj și revizie. Calitate garantată, program flexibil.</p>
+                    <p class="lang-en">Our team uses certified equipment and professional solutions for every sanitization, installation and service. Guaranteed quality, flexible schedule.</p>
+                    <div class="hero-actions" style="margin-top: 32px;">
+                        <a href="tel:0730946550" class="btn-primary"><span class="lang-en">📞 Call Now</span><span class="lang-ro">📞 Sună Acum</span></a>
+                        <a href="https://wa.me/40730946550" target="_blank" class="btn-secondary"><span class="lang-en">💬 WhatsApp</span><span class="lang-ro">💬 WhatsApp</span></a>
+                    </div>
+                </div>
+                <div class="video-row-media scroll-reveal">
+                    <div class="video-wrapper">
+                        <video id="main-video" controls playsinline>
+                            <source src="video.mp4" type="video/mp4">
+                        </video>
+                        <audio id="main-audio" loop>
+                            <source src="audio.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
                 </div>
             </div>
         </div>
